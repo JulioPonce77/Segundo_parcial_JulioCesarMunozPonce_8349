@@ -1,0 +1,10 @@
+<h1>Lista de Mascotas</h1>
+<a href="{% url 'crear_mascota' %}">Crear Mascota</a>
+<ul>
+    {% for mascota in mascotas %}
+        <li>{{ mascota.nombre }} 
+            <a href="{% url 'modificar_mascota' mascota.id_mascota %}">Modificar</a>
+            <a href="{% url 'eliminar_mascota' mascota.id_mascota %}">Eliminar</a>
+        </li>
+    {% endfor %}
+</ul>
